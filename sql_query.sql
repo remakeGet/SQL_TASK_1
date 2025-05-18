@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS genres(
   genre_id SERIAL PRIMARY KEY,
   title VARCHAR(40) NOT NULL);
 
-CREATE TABLE IF NOT EXISTS musucians(
+CREATE TABLE IF NOT EXISTS musicians(
   musician_id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL);
 
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS tracklist(
   track_id SERIAL PRIMARY KEY,
   title VARCHAR(40) NOT NULL,
   duration INT NOT NULL,
-  album_id NOT NULL, 
+  album_id INT NOT NULL, 
               FOREIGN KEY (album_id) REFERENCES albums(album_id) ON DELETE CASCADE);
 
 CREATE TABLE IF NOT EXISTS album_Musician(
